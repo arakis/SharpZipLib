@@ -1,15 +1,13 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" xmlns:Conversion="urn:Conversion">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" xmlns:Conversion="urn:Conversion" ToolsVersion="4.0">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}</ProjectGuid>
     <RootNamespace>ICSharpCode.SharpZipLib</RootNamespace>
     <AssemblyName>ICSharpCode.SharpZipLib</AssemblyName>
     <OutputType>Library</OutputType>
-    <ApplicationIcon />
     <WarningLevel>4</WarningLevel>
-    <StartupObject />
     <NoStdLib>False</NoStdLib>
     <NoConfig>False</NoConfig>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
@@ -18,22 +16,26 @@
     <DocumentationFile>..\bin\ICSharpCode.SharpZipLib.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>false</DebugSymbols>
     <Optimize>True</Optimize>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
-    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
     <OutputPath>..\bin\</OutputPath>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DebugType>None</DebugType>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <Optimize>False</Optimize>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
-    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
     <OutputPath>..\bin\</OutputPath>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DebugType>Full</DebugType>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+    <DefineConstants>NET_2_0</DefineConstants>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <RegisterForComInterop>False</RegisterForComInterop>
@@ -56,7 +58,6 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Checksums\IChecksum.cs" />
     <Compile Include="Checksums\Adler32.cs" />
-    <Compile Include="Checksums\Crc32.cs" />
     <Compile Include="Zip\WindowsNameTransform.cs" />
     <Compile Include="Zip\ZipEntry.cs" />
     <Compile Include="Zip\ZipInputStream.cs" />
@@ -65,13 +66,11 @@
     <Compile Include="Zip\ZipFile.cs" />
     <Compile Include="GZip\GzipOutputStream.cs" />
     <Compile Include="GZip\GzipInputStream.cs" />
-    <Compile Include="GZip\GZipConstants.cs" />
     <Compile Include="Zip\ZipException.cs" />
     <Compile Include="BZip2\BZip2InputStream.cs" />
     <Compile Include="BZip2\BZip2OutputStream.cs" />
     <Compile Include="BZip2\BZip2Constants.cs" />
     <Compile Include="BZip2\BZip2.cs" />
-    <Compile Include="Checksums\StrangeCrc.cs" />
     <Compile Include="Tar\TarEntry.cs" />
     <Compile Include="Tar\TarHeader.cs" />
     <Compile Include="Tar\TarBuffer.cs" />
@@ -109,6 +108,9 @@
     <Compile Include="Core\StreamUtils.cs" />
     <Compile Include="Zip\ZipEntryFactory.cs" />
     <Compile Include="Zip\IEntryFactory.cs" />
+    <Compile Include="Checksums\CRC32.cs" />
+    <Compile Include="GZip\GZIPConstants.cs" />
+    <Compile Include="Checksums\StrangeCRC.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
