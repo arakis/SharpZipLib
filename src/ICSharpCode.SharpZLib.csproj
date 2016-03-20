@@ -108,9 +108,9 @@
     <Compile Include="Core\StreamUtils.cs" />
     <Compile Include="Zip\ZipEntryFactory.cs" />
     <Compile Include="Zip\IEntryFactory.cs" />
-    <Compile Include="Checksums\CRC32.cs" />
-    <Compile Include="GZip\GZIPConstants.cs" />
-    <Compile Include="Checksums\StrangeCRC.cs" />
+    <Compile Include="Checksums\Crc32.cs" />
+    <Compile Include="GZip\GZipConstants.cs" />
+    <Compile Include="Checksums\StrangeCrc.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
